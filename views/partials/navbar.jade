@@ -1,0 +1,19 @@
+nav.navbar.navbar-default
+  div.container-fluid
+    // Brand and toggle get grouped for better mobile display
+    div.navbar-header
+      button(type="button", data-toggle="collapse", data-target="main-navbar-collapse", aria-expanded="false")
+        //- 'sr-only' refers to the screen reader only, for optimization for
+        //- visually impaired. 
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a(href='#').navbar-brand Brand
+
+    //- Collect the nav links, forms, and other content for toggling
+    div.collapse.navbar-collapse#main-navbar-collapse
+      li.dropdown
+        a(hfef="#", data-toggle="dropdown", role="button", aria-haspopup="true", aria-expanded="false")
+          | Quick Tools
+          span.caret
