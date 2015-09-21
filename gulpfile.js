@@ -34,23 +34,3 @@ gulp.task('help', function() {
   console.log(appRoot + '/gulp/config.js');
   console.log(config);
 });
-
-gulp.task('wirer', function(){
-  hlp.log('wirer');
-  
-  var wiredep = require('wiredep').stream;
-  var options = {
-    directory: appRoot + './bower_components',
-    bowerJson: require(appRoot + '/bower.json'),
-    onError: function  (err) {
-      hlp.log(err);
-    }
-  };
-  
-    return gulp
-    .src('index.jade')
-    .pipe($.plumber())
-    .pipe(wiredep(options))
-    .pipe(gulp.dest(appRoot + '/dest'));
-    
-});

@@ -29,4 +29,5 @@ node_modules
 bower_components
 
 # Runtime destination folder
+# Just because I'm not sure this needs to be cluttering up the GitHub repo
 dest
