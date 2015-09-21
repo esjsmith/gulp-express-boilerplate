@@ -1,13 +1,8 @@
 var gulp = require('gulp');
-var app = require('express')();
 var $ = require('gulp-load-plugins')({lazy: true});
 var config = require('./config')();
 
-/**
- *
- * @returns {{log: Function, inject: Function}}
- */
-module.exports = function () {
+module.exports = function() {
 
   return {
     log: function log(msg) {
@@ -22,15 +17,28 @@ module.exports = function () {
       }
     },
     inject: function (jsOrCss) {
-      var src // This is the dev js or css that needs injected
-       ,  target;  // This is the Jade file that will receive the injected stuff
       var that = this;
+      var target, source;
       switch (jsOrCss) {
         case 'js':
-          that.log("Inserting JS into ...");
+          that.log('Wiring in dev JavaScript files.');
+          sources = gulp.src(config.jsFiles);
+            // The list of js files for the client as given by the config file
+          that.log('JS files are from ', sources);
+
+          target = gulp.src(config.jadeIndex.target);
+            // The dev-index.jade file into which everything will be inserted
+          that.log('JS files are being injected into ', target);
+
+          return target
+            .pipe($.inject(sources))
+            .pipe(gulp.dest(config.jadeIndex.dest));
+
+
+
           break;
         case 'css':
-          // stuff
+          that.log('Wiring in dev CSS files.')
           break;
       }
     }

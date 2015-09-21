@@ -1,3 +1,6 @@
+//If this is in the /views folder, it has been placed here
+//by gulp-inject or by wiredep after injecting the dependencies.
+
 extends layout
 
 block styles
@@ -5,8 +8,8 @@ block styles
   //bower:css
   //endbower
   
-  //inject:css
-  //endinject
+  //- inject:css
+  //- endinject
 block content
   h1= title
   p Welcome to #{title}
@@ -15,5 +18,5 @@ block content
     //bower:js
     //endbower
   
-    //inject:js
-    //endinject
+    //- inject:js
+    //- endinject

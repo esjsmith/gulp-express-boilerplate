@@ -5,27 +5,25 @@ var path = require('path');
 var $ = require('gulp-load-plugins')({lazy: true});
 
 /**
- *
- * @returns {{build: string, getWiredepDefaultOptions: Function, index: string, views: *}}
+* @returns{{config.clientFolder}}
  */
 module.exports = function () {
   'use strict';
   var paths = {
     views: appRoot + '/views/',
     myJs: appRoot + '/client/js/',
-    dev: appRoot + '/dev/'
+    dev: appRoot + '/src/'
   };
 
   var config = {
     clientFolder: appRoot + '/client/',
-    jsFolder: paths.myJs,
-    indexDev: paths.dev + 'dev-index.jade',
+    jsFiles: paths.myJs + '**/*.js',
     jadeIndex: {
-      target: paths.dev + 'dev-index.jade',
+      target: paths.dev + 'index.jade',
       dest: paths.views
     }
   };
-  
+
   return config;
 
 };
