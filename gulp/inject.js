@@ -27,16 +27,18 @@ gulp.task('wiredep', function () {
     .pipe(gulp.dest(appRoot + '/dest'));
 });
 
-gulp.task('inject', ['inject:js', 'inject:css']);
-  // TODO: make inject:js and inject:css
+gulp.task('inject', ['clean:index', 'inject:js']);
+  // TODO: add inject:css once there is a pre-processor for css
   /*
    * Inject task will place in custom CSS and JS into the appropriate places
    * in the targeted files. Because inject:css may require a compile step,
    * based on the user's style language preference, it is done seperately.
    */
 
+
+
 gulp.task('inject:css', function(done) {
-  hlp.inject('cs');
+  hlp.inject('css');
 })
 
 gulp.task('inject:js', function(done){

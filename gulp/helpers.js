@@ -34,8 +34,6 @@ module.exports = function() {
             .pipe($.inject(sources))
             .pipe(gulp.dest(config.jadeIndex.dest));
 
-
-
           break;
         case 'css':
           that.log('Wiring in dev CSS files.')
