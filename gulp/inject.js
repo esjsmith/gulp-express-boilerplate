@@ -1,3 +1,5 @@
+'use strict';
+
 var appRoot = require('app-root-path').path; // Package to find root of project
 
 var app = require('express')();
@@ -39,7 +41,7 @@ gulp.task('inject', ['clean:index', 'inject:js']);
 
 gulp.task('inject:css', function(done) {
   hlp.inject('css');
-})
+});
 
 gulp.task('inject:js', function(done){
   hlp.inject('js');
