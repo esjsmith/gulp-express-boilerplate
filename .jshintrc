@@ -1,1 +1,9 @@
-"laxcomma"  :   true
+{
+  "bitwise"       : true,
+  "browser"       : true,
+  "esnext"        : true,
+  "undef"         : true,
+  "indent"        : 2,
+  "strict"        : true,
+  "node"          : true
+}
