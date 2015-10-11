@@ -2,7 +2,7 @@
 var appRoot = require('app-root-path').path;
 var app = require('express')();
 var config = require(appRoot + '/gulp/config.js')();
-var del = require('del');
+var del = require('del');  // Deletes files
 var gulp = require('gulp');
 
 var hlp = require('./helpers')();
